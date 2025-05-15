@@ -82,7 +82,6 @@ export class Processor {
     /* 6 points if the day in the purchase date is odd. */
     private get_points_for_day_is_odd() : number {
         const purchaseDate = new Date(this.receipt.purchaseDate).toISOString().split('T', 1)[0] // ensure that purchase date is in the right format
-        console.log("purchaseDate", purchaseDate)
         const date = parseInt(purchaseDate.split('-')[2])
         if(date % 2 === 1) {
             return 6
