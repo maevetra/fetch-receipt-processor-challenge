@@ -1,11 +1,13 @@
+import { ReceiptContent } from "../types"
+
 export class Processor {
-    private receipt: any
+    private receipt: ReceiptContent
     /**
      * A receipt processor to calculate points
-     * @param {any} receipt - A receipt to be calculated
+     * @param {ReceiptContent} receipt - Content of a receipt to be calculated
      */
-    constructor(receipt: any) {
-        this.receipt = receipt
+    constructor(receiptContent: ReceiptContent) {
+        this.receipt = receiptContent
     }
 
     /**
