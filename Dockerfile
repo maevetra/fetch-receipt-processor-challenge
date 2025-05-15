@@ -22,7 +22,7 @@ COPY . .
 RUN npm run build
 
 # Expose the port that the application listens on
-EXPOSE 3000
+EXPOSE 8000
 
 # Run the application as non-root user
 USER node
