@@ -11,4 +11,11 @@ export class Receipt {
         this.id = id
         this.content = content
     }
+
+    // TODO: implement get function
+    get points() {
+        return 0
+    }
+
+    
 }
