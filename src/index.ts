@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express'
 import { v4 as uuidv4 } from 'uuid'
+import { Receipt } from './types'
 
 const PORT = process.env.PORT || 3000
 
@@ -10,11 +11,29 @@ app.use(express.json())
 const receipts = new Map() 
 
 app.post('/receipts/process', (req: Request, res: Response) => {
-    // TODO: implement processing receipts
+    const id = uuidv4()
+    const receipt = new Receipt(id, req.body)
+    if(receipt.isReceiptValid) {
+        const points = receipt.points
+        receipts.set(id, points)
+        res.status(200).send({"id" : id})
+    } else {
+        res.status(400).send("Invalid receipt")
+    }
 })
 
 app.get('/receipts/:id/points', (req: Request, res: Response) => {
-    // TODO: implement get receipts
+    const id = req.params.id
+    
+    if(!receipts.has(id)) {
+        res.status(404).send('Receipt not found')
+    } else {
+        const points = receipts.get(id);
+        
+        res.status(200).send({
+            "points": points
+        })
+    }
 })
 
 app.listen(PORT, () => {
