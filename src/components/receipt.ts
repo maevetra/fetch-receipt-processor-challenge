@@ -5,7 +5,7 @@ export type ReceiptContent = {
     purchaseDate: string
     purchaseTime: string
     items: any
-    total: number
+    total: string
 }
 
 export class Receipt {
