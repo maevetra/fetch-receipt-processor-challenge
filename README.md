@@ -95,10 +95,10 @@ docker build . -t fetch-receipt-processor
 
 - You can then start the server using the following command:
 ```
-docker run -p 3000:3000 fetch-receipt-processor
+docker run -p 8000:8000 fetch-receipt-processor
 ```
 
 4. Accessing the Application:
 
-- The application will now be running in a Docker container and is accessible at http://localhost:3000.
-- You can now use the defined routes to process receipts and retrieve points: http://localhost:3000/receipts/process for processing receipts and http://localhost:3000/receipts/{id}/points for retrieving points.
+- The application will now be running in a Docker container and is accessible at http://localhost:8000.
+- You can now use the defined routes to process receipts and retrieve points: http://localhost:8000/receipts/process for processing receipts and http://localhost:8000/receipts/{id}/points for retrieving points.
