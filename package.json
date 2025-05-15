@@ -4,9 +4,9 @@
   "main": "index.ts",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "serve": "node dist/index.js"
+    "serve": "node dist/index.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,8 @@
   },
   "devDependencies": {
     "@types/express": "^5.0.1",
-    "@types/node": "^22.15.18"
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.18",
+    "ts-jest": "^29.3.3"
   }
 }
